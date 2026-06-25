@@ -24,7 +24,7 @@ body:
       description: "告诉我为什么需要这个功能 | Tell me why this feature is needed"
       placeholder: |
         这个功能可以解决什么问题？
-        What problem does this feature solve?
+        What problem does this feature solve ?
     validations:
       required: true
 
