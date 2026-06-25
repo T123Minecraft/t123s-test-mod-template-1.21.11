@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "com.t123minecraft.t123s_test_mod.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ExampleMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
