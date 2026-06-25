@@ -13,14 +13,15 @@ jobs:
       - name: validate gradle wrapper
         uses: gradle/actions/wrapper-validation@v4
 
-      - name: read java version from gradle.properties
+      - name: read java version
+        id: java
         run: |
-          echo "JAVA_VERSION=$(grep '^java_version=' gradle.properties | cut -d'=' -f2)" >> $GITHUB_ENV
+          echo "version=$(grep '^java_version=' gradle.properties | cut -d'=' -f2)" >> $GITHUB_OUTPUT
 
       - name: setup jdk
         uses: actions/setup-java@v4
         with:
-          java-version: ${{ env.JAVA_VERSION }}
+          java-version: ${{ steps.java.outputs.version }}
           distribution: microsoft
 
       - name: make gradle wrapper executable
