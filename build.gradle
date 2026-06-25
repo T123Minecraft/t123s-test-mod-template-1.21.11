@@ -3,7 +3,11 @@ plugins {
 	id 'maven-publish'
 }
 
-version = project.mod_version
+def modLoader = project.findProperty("mod_loader") ?: "unknown"
+def mc = project.findProperty("minecraft_version") ?: "unknown"
+def modVersion = project.findProperty("mod_version") ?: "0.0.0"
+
+version = "${modVersion}+${modLoader}_${mc}"
 group = project.maven_group
 
 base {
