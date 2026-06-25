@@ -1,30 +1,49 @@
-# Automatically build the project and run any configured tests for every push
-# and submitted pull request. This can help catch issues that only occur on
-# certain platforms or Java versions, and provides a first line of defence
-# against bad commits.
-
 name: build
-on: [pull_request, push]
+
+on: [pull_request, push, workflow_dispatch]
 
 jobs:
   build:
     runs-on: ubuntu-24.04
+
     steps:
       - name: checkout repository
         uses: actions/checkout@v4
+
       - name: validate gradle wrapper
         uses: gradle/actions/wrapper-validation@v4
+
+      - name: read java version from gradle.properties
+        run: |
+          echo "JAVA_VERSION=$(grep '^java_version=' gradle.properties | cut -d'=' -f2)" >> $GITHUB_ENV
+
       - name: setup jdk
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
-          distribution: 'microsoft'
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: microsoft
+
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
+
       - name: build
         run: ./gradlew build
-      - name: capture build artifacts
+
+      - name: find mod jar
+        run: |
+          JAR=$(find build/libs \
+            -name "*.jar" \
+            ! -name "*-sources.jar" \
+            ! -name "*-dev.jar" \
+            ! -name "*-javadoc.jar" \
+            | head -n 1)
+
+          echo "JAR=$JAR" >> $GITHUB_ENV
+          echo "JAR_NAME=$(basename "$JAR" .jar)" >> $GITHUB_ENV
+
+      - name: upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Artifacts
-          path: build/libs/
+          name: ${{ env.JAR_NAME }}
+          path: ${{ env.JAR }}
+          if-no-files-found: error
