@@ -14,7 +14,6 @@ body:
     validations:
       required: true
 
-
   - type: input
     id: loader
     attributes:
@@ -23,7 +22,6 @@ body:
       placeholder: "例如 | e.g. : Fabric"
     validations:
       required: true
-
 
   - type: input
     id: mod_version
@@ -34,7 +32,6 @@ body:
     validations:
       required: true
 
-
   - type: input
     id: system
     attributes:
@@ -43,7 +40,6 @@ body:
       placeholder: "例如 | e.g. : Windows 11"
     validations:
       required: true
-
 
   - type: textarea
     id: steps
@@ -57,7 +53,6 @@ body:
     validations:
       required: true
 
-
   - type: textarea
     id: modlist
     attributes:
@@ -67,7 +62,6 @@ body:
     validations:
       required: false
 
-
   - type: textarea
     id: screenshots
     attributes:
@@ -75,7 +69,6 @@ body:
       description: "给出bug发生时的游戏截图 | Give the screenshot when the bug happens"
     validations:
       required: false
-
 
   - type: textarea
     id: logs_crash
@@ -85,7 +78,6 @@ body:
       render: shell
     validations:
       required: false
-
 
   - type: textarea
     id: extra
