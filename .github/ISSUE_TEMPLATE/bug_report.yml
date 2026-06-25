@@ -9,7 +9,7 @@ body:
     id: mc_version
     attributes:
       label: "Minecraft版本 | Minecraft Version"
-      placeholder: "例如 | e.g.: 1.21.11"
+      placeholder: "例如 | e.g. : 1.21.11"
     validations:
       required: true
 
@@ -19,7 +19,7 @@ body:
     attributes:
       label: "模组加载器 | Mod Loader"
       description: "告诉我你用的模组加载器 | Tell me which mod loader you are using"
-      placeholder: "例如 | e.g.: Fabric"
+      placeholder: "例如 | e.g. : Fabric"
     validations:
       required: true
 
@@ -29,7 +29,7 @@ body:
     attributes:
       label: "模组版本 | Mod Version"
       description: "告诉我你用的模组的版本 | Tell me the version of the mod you are using"
-      placeholder: "例如 | e.g.: 0.1.0-alpha.1"
+      placeholder: "例如 | e.g. : 0.1.0-alpha.1"
     validations:
       required: true
 
@@ -39,7 +39,7 @@ body:
     attributes:
       label: "系统 | System"
       description: "告诉我你用的系统 | Tell me which system you are using"
-      placeholder: "例如 | e.g.: Windows 11"
+      placeholder: "例如 | e.g. : Windows 11"
     validations:
       required: true
 
@@ -62,7 +62,7 @@ body:
     attributes:
       label: "模组列表 | Mod List"
       description: |
-        "告诉我你用的模组 | Tell me which mods you are using"
+        告诉我你用的模组 | Tell me which mods you are using
     validations:
       required: false
 
@@ -80,11 +80,7 @@ body:
     id: logs_crash
     attributes:
       label: "日志/崩溃报告 | Logs/Crash Reports"
-      description: |
-        "'给出bug发生时的日志/崩溃报告 | Give the logs/crash report when the bug happens'
-
-        - '日志 | Logs'：.minecraft/versions/logs/latest.log
-        - '崩溃报告 | Crash Reports'：.minecraft/versions//crash-reports/crash-*.txt "
+      description: "给出bug发生时的日志/崩溃报告 | Give the logs/crash report when the bug happens"
       render: shell
     validations:
       required: false
