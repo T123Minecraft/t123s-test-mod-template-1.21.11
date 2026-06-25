@@ -11,9 +11,6 @@ body:
     attributes:
       label: "你的想法 | Your Idea"
       description: "描述你想要的新功能 | Describe the feature you want"
-      placeholder: |
-        请尽可能详细说明你想要的功能
-        Please describe the feature in as much detail as possible
     validations:
       required: true
 
@@ -22,25 +19,15 @@ body:
     attributes:
       label: "为什么需要这个功能 | Why is this needed"
       description: "告诉我为什么需要这个功能 | Tell me why this feature is needed"
-      placeholder: |
-        这个功能可以解决什么问题？
-        What problem does this feature solve ?
     validations:
       required: true
 
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: "替代方案 | Alternatives"
-      description: "你是否考虑过其他替代方案 | Have you considered any alternative solutions?"
-    validations:
-      required: false
 
   - type: textarea
     id: screenshots
     attributes:
       label: "参考截图 | Reference Screenshot"
-      description: "可以上传参考图片或示例 | You can upload reference images or examples"
+      description: "上传参考图片或示例 | Upload reference images or examples"
     validations:
       required: false
 
