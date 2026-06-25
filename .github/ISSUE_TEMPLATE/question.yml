@@ -1,0 +1,81 @@
+name: Question
+description: "向我提出关于模组的使用或问题 | Ask questions about the mod"
+title: "[Question] "
+labels: ["question"]
+assignees: T123Minecraft
+
+body:
+
+  - type: input
+    id: mc_version
+    attributes:
+      label: "Minecraft版本 | Minecraft Version"
+      placeholder: "例如 | e.g. : 1.21.11"
+    validations:
+      required: true
+
+
+  - type: input
+    id: loader
+    attributes:
+      label: "模组加载器 | Mod Loader"
+      description: "告诉我你使用的模组加载器 | Tell me which mod loader you are using"
+      placeholder: "例如 | e.g. : Fabric"
+    validations:
+      required: true
+
+
+  - type: input
+    id: mod_version
+    attributes:
+      label: "模组版本 | Mod Version"
+      description: "告诉我你使用的模组版本 | Tell me the version of the mod you are using"
+      placeholder: "例如 | e.g. : 0.1.0-alpha.1"
+    validations:
+      required: true
+
+
+  - type: input
+    id: system
+    attributes:
+      label: "系统 | System"
+      description: "告诉我你使用的系统 | Tell me which system you are using"
+      placeholder: "例如 | e.g. : Windows 11"
+    validations:
+      required: true
+
+
+  - type: textarea
+    id: question
+    attributes:
+      label: "问题内容 | Question"
+      description: "请尽可能清晰地描述你的问题 | Please describe your question as clearly as possible"
+    validations:
+      required: true
+
+
+  - type: textarea
+    id: what_tried
+    attributes:
+      label: "已尝试的方法 | What you've tried"
+      description: "你已经尝试过哪些方法来解决？| What have you tried to solve this ?"
+    validations:
+      required: false
+
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "截图 | Screenshots"
+      description: "如果有帮助理解问题，可以上传截图 | Upload screenshots if helpful"
+    validations:
+      required: false
+
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: "额外信息 | Extra Information"
+      description: "一些可选的补充内容 | Optional additional information"
+    validations:
+      required: false
