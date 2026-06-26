@@ -1,3 +1,4 @@
 {
-  "item.t123s-test-mod.test_item": "测试物品"
+  "item.t123s-test-mod.test_item": "测试物品",
+  "itemGroup.t123s-test-mod.t123stestmod_group": "测试物品组"
 }
