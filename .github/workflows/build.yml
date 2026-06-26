@@ -38,7 +38,7 @@ jobs:
           echo "JAR_NAME=$(basename "$JAR" .jar)" >> $GITHUB_ENV
 
       - name: upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ env.JAR_NAME }}
           path: ${{ env.JAR }}
